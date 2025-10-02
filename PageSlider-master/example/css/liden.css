@@ -1,0 +1,207 @@
+/*____________________________________________________________ ## Linden ____________________________________________________________*/
+.linden {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-65%, -50%);
+  width: 356px;
+  height: 884px;
+}
+.linden .circle {
+  transform: scale(0);
+}
+.linden .leftRod {
+  position: absolute;
+  bottom: 0;
+  left: 160px;
+  width: 0px;
+  height: 380px;
+  background-color: #000;
+}
+.linden .leftRod .leftRod__leftBruch {
+  position: absolute;
+  top: -80px;
+  right: 0;
+  width: 56px;
+  height: 80px;
+  border: 0px solid #000;
+  border-top: 0;
+  border-right: 0;
+}
+.linden .leftRod .leftRod__leftBruch ._cmlb {
+  top: -46px;
+  left: -25px;
+}
+.linden .centerRod {
+  position: absolute;
+  bottom: 0;
+  left: 175px;
+  width: 0px;
+  height: 797px;
+  background-color: #000;
+}
+.linden .centerRod .bottomArc {
+  position: absolute;
+  bottom: 437px;
+  right: -85px;
+  width: 240px;
+  height: 70px;
+  border: 0px solid #000;
+  border-top: 0;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+}
+.linden .centerRod .bottomArc .bottomArc__rightBranch {
+  position: absolute;
+  top: -95px;
+  right: -4px;
+  width: 0px;
+  height: 95px;
+  background-color: #000;
+}
+.linden .centerRod .bottomArc .bottomArc__rightBranch ._position_2 {
+  top: -101px;
+  left: -85px;
+}
+.linden .centerRod .bottomArc ._position_1 {
+  bottom: 42px;
+  left: -28px;
+}
+.linden .centerRod .topArc {
+  position: absolute;
+  bottom: 488px;
+  left: 4px;
+  width: 145px;
+  height: 0px;
+  background-color: #000;
+}
+.linden .centerRod .topArc .stem_horizontal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 0px solid #000;
+}
+
+.linden .centerRod .topArc .topArc__leftBranch {
+  position: absolute;
+  bottom: 0;
+  left: -75px;
+  width: 150px;
+  height: 150px;
+  border: 0px solid #000;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(45deg);
+}
+.linden .centerRod .topArc ._position_3 {
+  bottom: 0;
+  right: -32px;
+}
+.linden .centerRod .topArc ._position_4 {
+  bottom: 75px;
+  left: -125px;
+}
+.linden .centerRod ._position_5 {
+  top: -87px;
+  left: -60px;
+}
+.linden .centerRod ._position_5 .basisBrunch {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 50%;
+  background-color: #000;
+}
+.linden .rightRod {
+  position: absolute;
+  bottom: 0;
+  left: 192px;
+  width: 0px;
+  height: 362px;
+  background-color: #000;
+}
+.linden .rightRod .rightRod__rightBruch {
+  position: absolute;
+  top: -169px;
+  width: 32px;
+  height: 169px;
+  border: 0px solid #000;
+  border-top: 0;
+  border-left: 0;
+}
+.linden .rightRod .rightRod__rightBruch ._cmrb {
+  top: -46px;
+  right: -25px;
+}
+.linden .circle {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+.linden .circle._center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.linden .crown {
+  position: absolute;
+  border-radius: 100px;
+  transform: scale(0);
+}
+.linden .crown._sm {
+  width: 62px;
+  height: 108px;
+}
+.linden .crown._md {
+  width: 101px;
+  height: 178px;
+}
+.linden .crown._lg {
+  width: 124px;
+  height: 218px;
+}
+.linden .crown._md_horizontal {
+  width: 178px;
+  height: 101px;
+}
+@media screen and (orientation: landscape) and (max-height: 914px) {
+  .linden {
+    transform: translate(-65%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 737px) {
+  .linden {
+    transform: translate(-60%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 550px) {
+  .linden {
+    transform: translate(-60%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 406px) {
+  .linden {
+    transform: translate(-60%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .linden {
+    transform: translate(-60%, -50%) scale(0.7);
+  }
+}
+@media screen and (max-width: 375px) {
+  .linden {
+    transform: translate(-60%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .linden {
+    transform: translate(-60%, -50%) scale(0.5);
+  }
+}

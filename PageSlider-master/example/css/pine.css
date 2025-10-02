@@ -1,0 +1,259 @@
+.pine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 456px;
+  height: 884px;
+}
+.pine .leftRod {
+  position: absolute;
+  bottom: 0;
+  left: 262px;
+  width: 19px;
+  height: 410px;
+  border: 0px solid #000;
+  border-top-left-radius: 70px;
+  border-bottom: 0;
+  border-right: 0;
+}
+.pine .leftRod .leftRod__rightBrunch {
+  position: absolute;
+  top: -41px;
+  right: -101px;
+  width: 101px;
+  height: 41px;
+  border: 0px solid #000;
+  border-bottom-right-radius: 70px;
+  border-top: 0;
+  border-left: 0;
+}
+.pine .leftRod .leftRod__rightBrunch ._position_1 {
+  top: -77px;
+  left: 23px;
+}
+.pine .centerRod {
+  position: absolute;
+  left: 277px;
+  width: 0px;
+  height: 100%;
+  background-color: #000;
+}
+.pine .centerRod .centerRod__bottomLeftBrunch {
+  position: absolute;
+  bottom: 473px;
+  right: 0;
+  width: 90px;
+  height: 47px;
+  border: 4px solid #000;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: px;
+  border-top: 0;
+  border-left: borderLeft;
+  border-right: borderRight;
+}
+.pine .centerRod .centerRod__bottomLeftBrunch ._position_3 {
+  top: -61px;
+  left: -63px;
+  right: px;
+}
+.pine .centerRod .centerRod__bottomRightBrunch {
+  position: absolute;
+  bottom: 558px;
+  right: ;
+  width: 95px;
+  height: 40px;
+  border: 4px solid #000;
+  border-bottom-left-radius: px;
+  border-bottom-right-radius: 70px;
+  border-top: 0;
+  border-left: borderLeft;
+  border-right: borderRight;
+}
+.pine .centerRod .centerRod__bottomRightBrunch ._position_4 {
+  top: -61px;
+  left: px;
+  right: -63px;
+}
+.pine .centerRod .centerRod__topLeftBrunch {
+  position: absolute;
+  bottom: 609px;
+  right: 0;
+  width: 83px;
+  height: 47px;
+  border: 4px solid #000;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: px;
+  border-top: 0;
+  border-left: borderLeft;
+  border-right: borderRight;
+}
+.pine .centerRod .centerRod__topLeftBrunch ._position_5 {
+  top: -50px;
+  left: -51px;
+  right: px;
+}
+.pine .centerRod .centerRod__topRightBrunch {
+  position: absolute;
+  bottom: 690px;
+  right: ;
+  width: 88px;
+  height: 39px;
+  border: 4px solid #000;
+  border-bottom-left-radius: px;
+  border-bottom-right-radius: 70px;
+  border-top: 0;
+  border-left: borderLeft;
+  border-right: borderRight;
+}
+.pine .centerRod .centerRod__topRightBrunch ._position_6 {
+  top: -50px;
+  left: px;
+  right: -51px;
+}
+.pine .centerRod ._position_7 {
+  bottom: 791px;
+  left: -37px;
+}
+.pine .rightRod {
+  position: absolute;
+  bottom: 0;
+  left: 262px;
+  width: 40px;
+  height: 327px;
+  border: 0px solid #000;
+  border-top-right-radius: 70px;
+  border-bottom: 0;
+  border-left: 0;
+}
+.pine .rightRod .rightRod__leftBrunch {
+  position: absolute;
+  top: -47px;
+  left: -84px;
+  width: 84px;
+  height: 47px;
+  border: 0px solid #000;
+  border-bottom-left-radius: 70px;
+  border-top: 0;
+  border-right: 0;
+}
+.pine .rightRod .rightRod__leftBrunch ._position_2 {
+  opacity: 0;
+  top: -77px;
+  right: 6px;
+}
+.pine .rightRod .rightRod__leftBrunch ._position_2 .circle {
+  opacity: 0;
+}
+.pine .rightRod .rightRod__leftBrunch .crown__leftBrunch {
+  position: absolute;
+  top: 0;
+  left: -104px;
+  width: 104px;
+  height: 4px;
+  opacity: 0;
+}
+.pine .circle {
+  position: absolute;
+  top: -22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+.pine .crown {
+  position: absolute;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+}
+.pine .crown .basisBrunch {
+  position: absolute;
+  width: 4px;
+  height: 50%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+}
+.pine .crown .centerBrunch {
+  position: absolute;
+  top: -53px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 53px;
+  background-color: #000;
+}
+.pine .crown .centerBrunch .centerBrunch__leftBrunch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 166px;
+  height: 4px;
+}
+.pine .crown._lg {
+  width: 152px;
+  height: 77px;
+}
+.pine .crown._lg .kernel {
+  width: 76px;
+}
+.pine .crown._md {
+  width: 122px;
+  height: 61px;
+}
+.pine .crown._md .kernel {
+  width: 61px;
+}
+.pine .crown._sm {
+  width: 98px;
+  height: 50px;
+}
+.pine .crown._sm .kernel {
+  width: 49px;
+}
+.pine .crown._xs {
+  width: 78px;
+  height: 40px;
+}
+.pine .crown._xs .kernel {
+  width: 39px;
+}
+.pine .crown .kernel {
+  margin: 0 auto;
+  height: 50%;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+}
+@media screen and (orientation: landscape) and (max-height: 914px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 737px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 550px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 406px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+@media screen and (max-width: 375px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
