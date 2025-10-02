@@ -1025,21 +1025,44 @@
         text-align: center;
       }
 
-      #two {
-        background: #1d7599;
+      .bgm-btn {
+        padding: 20px 40px;
+        font-size: 24px; /* 字体更大 */
+        font-weight: bold;
+        color: #333;
+        background: white;
+        border: 2px solid #333;
+        border-radius: 12px; /* 圆角 */
+        cursor: pointer;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease;
+        position: absolute;
+        margin-left: -129px;
+        top: 50%;
+        left: 50%;
       }
 
-      #three {
-        background: #175e7a;
-      }
-
-      #four {
-        background: #114559;
+      .bgm-btn:hover {
+        background: #333;
+        color: white;
+        transform: scale(1.05);
       }
     </style>
   </head>
   <body>
     <div class="page-wrap">
+      <div class="page">
+        <button class="bgm-btn" id="unmuteBtn">▶ 播放背景音乐</button>
+        <audio
+          style="position: absolute"
+          id="bgAudio"
+          src="./src/docs/music/bg.mp3"
+          loop
+          muted
+          autoplay
+          preload="auto"
+        ></audio>
+      </div>
       <div class="page">
         <div class="seedling">
           <div class="rod">
@@ -1242,6 +1265,18 @@
         pages: $(".page-wrap .page"),
         // dev: 4,
       });
+
+      const audio = document.getElementById("bgAudio");
+      const btn = document.getElementById("unmuteBtn");
+
+      btn.addEventListener("click", () => {
+        audio.muted = false;
+        console.log("entered unmuted");
+        // 某些浏览器需要在用户交互后显式调用 play()
+        audio.play().catch((err) => console.warn("播放被阻止：", err));
+        p.next();
+      });
+      // btn.click();
 
       const MAX_AGE = 80;
       const LEAF_DISTANCE = 6;
@@ -1577,7 +1612,7 @@
                       canvas.width / 2,
                       canvas.height / 1.12
                     );
-                  }, 300);
+                  }, 500);
                 }
               }
               drawTree();
