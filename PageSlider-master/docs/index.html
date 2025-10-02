@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"
+    />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>Happy Birthday, Deartree!</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/liden.css" />
+    <link rel="stylesheet" href="./css/pine.css" />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        color: white;
+        font-size: 18px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f1eee2;
+      }
+      ._bg_black {
+        background-color: #000;
+      }
+      ._bg_red {
+        background-color: #de162a;
+      }
+
+      .section {
+        position: absolute;
+      }
+
+      .text {
+        color: black;
+        position: relative;
+        writing-mode: vertical-lr;
+        font-size: 1rem;
+        letter-spacing: 4px;
+        text-align: start;
+      }
+
+      .text p {
+        opacity: 0;
+      }
+
+      .text_seedling {
+        top: 50%;
+        left: 60%;
+      }
+
+      .text_sepal {
+        top: 50%;
+        left: 65%;
+      }
+
+      .text_linden {
+        top: 65%;
+        left: 55%;
+      }
+
+      .text_pine {
+        top: 65%;
+        left: 15%;
+      }
+
+      .current .text p {
+        margin-right: 8px;
+        opacity: 0;
+        transform: translateY(10px); /* 从下方轻微移动 */
+        animation: fade-in 1s ease-out forwards;
+      }
+      .text_seedling p:first-child {
+        animation-delay: 3s;
+      }
+      .text_seedling p:nth-child(2) {
+        animation-delay: 4s;
+      }
+      .text_seedling p:nth-child(3) {
+        animation-delay: 5s;
+      }
+
+      .text_sepal p:first-child {
+        animation-delay: 2.4s;
+      }
+      .text_sepal p:nth-child(2) {
+        animation-delay: 3.4s;
+      }
+      .text_sepal p:nth-child(3) {
+        animation-delay: 4.4s;
+      }
+
+      .text_linden p:first-child {
+        animation-delay: 2.5s;
+      }
+      .text_linden p:nth-child(2) {
+        animation-delay: 3.5s;
+      }
+      .text_linden p:nth-child(3) {
+        animation-delay: 4.5s;
+      }
+
+      .text_pine p:first-child {
+        animation-delay: 4s;
+      }
+      .text_pine p:nth-child(2) {
+        animation-delay: 5s;
+      }
+      .text_pine p:nth-child(3) {
+        animation-delay: 6s;
+      }
+
+      .seedling .circle {
+        display: none;
+      }
+      /* ------------------------------------------ */
+      .seedling {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 470px;
+        height: 816px;
+        overflow: hidden;
+      }
+      .seedling .rod {
+        position: relative;
+        margin: 0 auto;
+        width: 0px;
+        height: 100%;
+        background-color: #000;
+      }
+      .seedling .rod .basis {
+        position: absolute;
+        height: 324px;
+        bottom: 54px;
+        border: 2px #000;
+        z-index: 2;
+      }
+      .seedling .rod ._bs_dash {
+        border-style: dashed;
+      }
+      .seedling .rod ._bs_dot {
+        border-style: dotted;
+      }
+      .seedling .rod ._bs_solid {
+        border-style: solid;
+      }
+      .seedling .rod .legs {
+        position: absolute;
+        bottom: -35px;
+        left: -34px;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 4px solid #000;
+        border-width: 0px;
+      }
+      .seedling .rod .circle {
+        position: absolute;
+        border-radius: 50%;
+      }
+      .seedling .rod ._bCircle {
+        left: -20.5px;
+        width: 43px;
+        height: 43px;
+      }
+      .seedling .rod ._xl {
+        left: -26.5px;
+        width: 55px;
+        height: 55px;
+      }
+      .seedling .rod ._xl_margin {
+        bottom: 446px;
+      }
+      .seedling .rod ._left {
+        border-right: 0;
+      }
+      .seedling .rod ._right {
+        border-left: 0;
+      }
+      .seedling .rod ._left_1 {
+        width: 50px;
+        left: -50px;
+        border-bottom-left-radius: 105px 100%;
+        border-top-left-radius: 105px 100%;
+      }
+      .seedling .rod ._right_1 {
+        width: 50px;
+        right: -50px;
+        border-bottom-right-radius: 105px 100%;
+        border-top-right-radius: 105px 100%;
+      }
+      .seedling .rod ._left_2 {
+        width: 60px;
+        left: -60px;
+        border-bottom-left-radius: 125px 100%;
+        border-top-left-radius: 125px 100%;
+      }
+      .seedling .rod ._right_2 {
+        width: 60px;
+        right: -60px;
+        border-bottom-right-radius: 125px 100%;
+        border-top-right-radius: 125px 100%;
+      }
+      .seedling .rod ._left_3 {
+        width: 70px;
+        left: -70px;
+        border-bottom-left-radius: 145px 100%;
+        border-top-left-radius: 145px 100%;
+      }
+      .seedling .rod ._right_3 {
+        width: 70px;
+        right: -70px;
+        border-bottom-right-radius: 145px 100%;
+        border-top-right-radius: 145px 100%;
+      }
+      .seedling .rod ._left_4 {
+        width: 80px;
+        left: -80px;
+        border-bottom-left-radius: 165px 100%;
+        border-top-left-radius: 165px 100%;
+      }
+      .seedling .rod ._right_4 {
+        width: 80px;
+        right: -80px;
+        border-bottom-right-radius: 165px 100%;
+        border-top-right-radius: 165px 100%;
+      }
+      .seedling .rod ._left_5 {
+        width: 90px;
+        left: -90px;
+        border-bottom-left-radius: 185px 100%;
+        border-top-left-radius: 185px 100%;
+      }
+      .seedling .rod ._right_5 {
+        width: 90px;
+        right: -90px;
+        border-bottom-right-radius: 185px 100%;
+        border-top-right-radius: 185px 100%;
+      }
+      .seedling .rod ._left_6 {
+        width: 100px;
+        left: -100px;
+        border-bottom-left-radius: 205px 100%;
+        border-top-left-radius: 205px 100%;
+      }
+      .seedling .rod ._right_6 {
+        width: 100px;
+        right: -100px;
+        border-bottom-right-radius: 205px 100%;
+        border-top-right-radius: 205px 100%;
+      }
+      .seedling .rod ._left_7 {
+        width: 110px;
+        left: -110px;
+        border-bottom-left-radius: 225px 100%;
+        border-top-left-radius: 225px 100%;
+      }
+      .seedling .rod ._right_7 {
+        width: 110px;
+        right: -110px;
+        border-bottom-right-radius: 225px 100%;
+        border-top-right-radius: 225px 100%;
+      }
+      .seedling .rod ._left_8 {
+        width: 120px;
+        left: -120px;
+        border-bottom-left-radius: 245px 100%;
+        border-top-left-radius: 245px 100%;
+      }
+      .seedling .rod ._right_8 {
+        width: 120px;
+        right: -120px;
+        border-bottom-right-radius: 245px 100%;
+        border-top-right-radius: 245px 100%;
+      }
+      .seedling .rod ._xl_arc {
+        left: -8.5px;
+        width: 48px;
+        height: 48px;
+        bottom: 536px;
+      }
+      .seedling .rod ._lg_arc {
+        left: 23px;
+        width: 40px;
+        height: 40px;
+        bottom: 616px;
+      }
+      .seedling .rod ._xm_arc {
+        left: 60px;
+        width: 34px;
+        height: 34px;
+        bottom: 683px;
+      }
+      .seedling .rod ._md_arc {
+        left: 104px;
+        width: 26px;
+        height: 26px;
+        bottom: 735px;
+      }
+      .seedling .rod ._sm_arc {
+        left: 153px;
+        width: 19px;
+        height: 19px;
+        bottom: 770px;
+      }
+      .seedling .rod ._xs_arc {
+        left: 209px;
+        width: 12px;
+        height: 12px;
+        bottom: 787px;
+      }
+      .seedling .rod ._lg_rod {
+        left: -14px;
+        width: 32px;
+        height: 32px;
+        bottom: 592px;
+      }
+      .seedling .rod ._md_rod {
+        left: -12.5px;
+        width: 27px;
+        height: 27px;
+        bottom: 673px;
+      }
+      .seedling .rod ._sm_rod {
+        left: -9px;
+        width: 22px;
+        height: 22px;
+        bottom: 736px;
+      }
+      .seedling .rod ._xs_rod {
+        left: -7px;
+        width: 18px;
+        height: 18px;
+        bottom: px;
+      }
+      .seedling .rod ._b_circle_margin_1 {
+        bottom: 286.25px;
+      }
+      .seedling .rod ._b_circle_margin_2 {
+        bottom: 195.5px;
+      }
+      .seedling .rod ._b_circle_margin_3 {
+        bottom: 102.75px;
+      }
+      .seedling .arc {
+        position: absolute;
+        left: -46px;
+        top: 300px;
+        width: 778px;
+        height: 220px;
+        border-bottom-left-radius: 400px 230px;
+        border-bottom-right-radius: 400px 230px;
+        border: 0px solid #000;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        transform: rotate(90deg);
+      }
+
+      .curent .seedling .rod {
+        transform-origin: center 70%;
+        animation: seed-grow 0.5s ease-out forwards;
+      }
+
+      .stem {
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        margin-left: -2px;
+        background: #000;
+        transform: scaleY(0);
+        z-index: 200;
+      }
+      .current .seedling .stem {
+        animation: stem-grow 1s ease-out forwards 0.5s;
+        transform-origin: center 80%;
+      }
+      .current .sepal .stem {
+        animation: stem-grow 0.8s ease-out forwards 0.2s;
+        transform-origin: center 100%;
+      }
+      .current .linden .stem {
+        animation: stem-grow 0.8s ease-out forwards 0.2s;
+        transform-origin: center 100%;
+      }
+      .current .linden .leftRod .stem {
+        animation-duration: 0.4s;
+      }
+      .current .linden .rightRod .stem {
+        animation-duration: 0.4s;
+      }
+
+      .current .pine .centerRod {
+        animation: width-grow 0.8s ease-out forwards 0.2s;
+        transform-origin: center 100%;
+      }
+      .current .pine .leftRod {
+        animation: legs-grow 0.6s ease-out forwards 0.2s;
+      }
+      .current .pine .leftRod .leftRod__rightBrunch {
+        animation: legs-grow 0.6s ease-out forwards 0.2s;
+      }
+      .current .pine .rightRod {
+        animation: legs-grow 0.6s ease-out forwards 0.2s;
+      }
+      .current .pine .rightRod .rightRod__leftBrunch {
+        animation: legs-grow 0.6s ease-out forwards 0.2s;
+      }
+      .current .pine .rightRod .rightRod__leftBrunch ._position_2 {
+        transform-origin: bottom center;
+        animation: leaf-grow 0.8s ease-out forwards 0.8s;
+      }
+      .current .pine .rightRod .rightRod__leftBrunch .crown__leftBrunch {
+        transform-origin: right bottom;
+        animation: leaf-grow 0.4s ease-out forwards 1.6s;
+      }
+      .pine .rightRod .rightRod__leftBrunch ._position_2 .kernel {
+        opacity: 0;
+      }
+      .current .pine .rightRod .rightRod__leftBrunch ._position_2 .kernel {
+        transform-origin: center top;
+        animation: leaf-grow 0.4s ease-out forwards 2s;
+      }
+      .current .pine .rightRod .rightRod__leftBrunch ._position_2 .circle {
+        transform-origin: center center;
+        animation: leaf-grow 0.4s ease-out forwards 2s;
+      }
+      .pine .leftRod .leftRod__rightBrunch ._position_1 {
+        opacity: 0;
+      }
+      .pine .leftRod .leftRod__rightBrunch ._position_1 .kernel {
+        opacity: 0;
+      }
+      .current .pine .leftRod .leftRod__rightBrunch ._position_1 {
+        transform-origin: center bottom;
+        animation: leaf-grow 0.4s ease-out forwards 1.2s;
+      }
+      .current .pine .leftRod .leftRod__rightBrunch ._position_1 .kernel {
+        transform-origin: center bottom;
+        animation: leaf-grow 0.4s ease-out forwards 1.5s;
+      }
+      .pine .centerRod .centerRod__bottomLeftBrunch {
+        border-width: 0;
+      }
+      .current .pine .centerRod .centerRod__bottomLeftBrunch {
+        animation: legs-grow 0.6s ease-out forwards 0.3s;
+      }
+      .pine .centerRod .centerRod__bottomLeftBrunch ._position_3 {
+        opacity: 0;
+      }
+      .pine .centerRod .centerRod__bottomLeftBrunch ._position_3 .kernel {
+        opacity: 0;
+      }
+      .current .pine .centerRod .centerRod__bottomLeftBrunch ._position_3 {
+        transform-origin: center bottom;
+        animation: leaf-grow 0.4s ease-out forwards 1s;
+      }
+      .pine .centerRod .centerRod__bottomLeftBrunch ._position_3 .kernel {
+        transform-origin: center bottom;
+        animation: leaf-grow 0.8s ease-out forwards 1.4s;
+      }
+      .pine .centerRod .centerRod__bottomRightBrunch {
+        border-width: 0px;
+      }
+      .current .pine .centerRod .centerRod__bottomRightBrunch {
+        animation: legs-grow 0.6s ease-out forwards 0.4s;
+      }
+      .pine .centerRod .centerRod__bottomRightBrunch ._position_4 {
+        opacity: 0;
+      }
+      .pine .centerRod .centerRod__bottomRightBrunch ._position_4 .kernel {
+        opacity: 0;
+      }
+      .current .pine .centerRod .centerRod__bottomRightBrunch ._position_4 {
+        transform-origin: center bottom;
+        animation: leaf-grow 0.7s ease-out forwards 1.45s;
+      }
+      .current
+        .pine
+        .centerRod
+        .centerRod__bottomRightBrunch
+        ._position_4
+        .kernel {
+        transform-origin: center top;
+        animation: leaf-grow 0.4s ease-out forwards 1.8s;
+      }
+      .pine .centerRod .centerRod__topLeftBrunch {
+        border-width: 0;
+      }
+      .current .pine .centerRod .centerRod__topLeftBrunch {
+        animation: legs-grow 0.6s ease-out forwards 0.5s;
+      }
+      .pine .centerRod .centerRod__topLeftBrunch ._position_5 {
+        opacity: 0;
+      }
+      .pine .kernel {
+        opacity: 0;
+      }
+      .current .pine .centerRod .centerRod__topLeftBrunch ._position_5 {
+        transform-origin: center bottom;
+        animation: leaf-grow 0.6s ease-out forwards 1.55s;
+      }
+      .current .pine .centerRod .centerRod__topLeftBrunch ._position_5 .kernel {
+        transform-origin: center top;
+        animation: leaf-grow 0.4s ease-out forwards 2s;
+      }
+      .pine .crown .centerBrunch {
+        width: 0px;
+      }
+      .current .pine .crown .centerBrunch {
+        transform-origin: center bottom;
+        animation: width-grow 0.6s ease-out forwards 2.4s;
+      }
+      .pine .crown .centerBrunch .centerBrunch__leftBrunch {
+        opacity: 0;
+      }
+      .pine .crown .centerBrunch .centerBrunch__leftBrunch .circle {
+        opacity: 0;
+      }
+      .current .pine .crown .centerBrunch .centerBrunch__leftBrunch {
+        transform-origin: right center;
+        animation: leaf-grow 0.6s ease-out forwards 2.4s;
+      }
+      .current .pine .crown .centerBrunch .centerBrunch__leftBrunch .circle {
+        transform-origin: center center;
+        animation: leaf-grow 0.7s ease-out forwards 3s;
+      }
+      .pine .centerRod .centerRod__topRightBrunch {
+        border-width: 0px;
+      }
+      .current .pine .centerRod .centerRod__topRightBrunch {
+        animation: legs-grow 0.6s ease-out forwards 0.55s;
+      }
+      .pine .centerRod .centerRod__topRightBrunch ._position_6 {
+        opacity: 0;
+      }
+      .current .pine .centerRod .centerRod__topRightBrunch ._position_6 {
+        transform-origin: center bottom;
+        animation: leaf-grow 0.6s ease-out forwards 1.55s;
+      }
+      .current
+        .pine
+        .centerRod
+        .centerRod__topRightBrunch
+        ._position_6
+        .kernel {
+        transform-origin: center top;
+        animation: leaf-grow 0.4s ease-out forwards 2s;
+      }
+      .pine .centerRod ._position_7 {
+        opacity: 0;
+      }
+      .current .pine .centerRod ._position_7 {
+        transform-origin: center bottom;
+        animation: leaf-grow 0.6s ease-out forwards 1.6s;
+      }
+      .current .pine .centerRod ._position_7 .kernel {
+        transform-origin: center bottom;
+        animation: leaf-grow 0.6s ease-out forwards 1.9s;
+      }
+
+      .current .seedling .legs {
+        animation: legs-grow 0.3s ease-out forwards 1.2s;
+        transform-origin: center 0;
+      }
+      .current .sepal .brunch {
+        animation: legs-grow 0.3s ease-out forwards 0.2s;
+      }
+      .current .linden .leftRod .leftRod__leftBruch {
+        transform-origin: bottom bottom;
+        animation: legs-grow 0.3s ease-out forwards 0.4s;
+      }
+      .current .linden .rightRod .rightRod__rightBruch {
+        transform-origin: bottom bottom;
+        animation: legs-grow 0.3s ease-out forwards 0.4s;
+      }
+      .current .linden .centerRod .bottomArc {
+        transform-origin: bottom bottom;
+        animation: legs-grow 0.3s ease-out forwards 0.45s;
+      }
+      .current .linden .centerRod .topArc .topArc__leftBranch {
+        transform-origin: bottom bottom;
+        animation: legs-grow 0.3s ease-out forwards 0.5s;
+      }
+      .current .linden .centerRod .topArc .stem_horizontal {
+        transform-origin: bottom bottom;
+        animation: legs-grow 0.3s ease-out forwards 0.5s;
+      }
+
+      .current .seedling .leaf {
+        transform-origin: center center;
+        display: block;
+        opacity: 0;
+      }
+      .current .sepal .cup {
+        transform-origin: center center;
+        display: block;
+        opacity: 0;
+      }
+      /* 第一个小黑点 */
+      .current .linden .leftRod .leftRod__leftBruch ._cmlb.circle {
+        transform-origin: bottom center;
+        animation: leaf-grow 0.3s ease-out forwards 0.7s;
+      }
+      /* 第二个点，红的 */
+      .current .linden .centerRod .bottomArc ._position_1.crown._sm {
+        transform-origin: bottom center;
+        animation: leaf-grow 0.5s ease-out forwards 0.9s;
+      }
+      /* 第三个点，红的 */
+      .current .linden .rightRod .rightRod__rightBruch ._cmrb {
+        transform-origin: bottom center;
+        animation: leaf-grow 0.3s ease-out forwards 0.9s;
+      }
+      .current .linden .centerRod .topArc ._position_3 {
+        transform-origin: bottom center;
+        animation: leaf-grow 0.5s ease-out forwards 1s;
+      }
+      /* 竖着的枝干 */
+      .current .linden .centerRod .bottomArc .bottomArc__rightBranch .stem {
+        margin-left: -4px;
+        animation: stem-grow 0.3s ease-out forwards 0.5s;
+        transform-origin: center 100%;
+      }
+      /* 第四片叶子 */
+      .current .linden .centerRod .topArc ._position_4 {
+        transform-origin: bottom center;
+        animation: leaf-grow 0.7s ease-out forwards 1s;
+      }
+      .linden .circle._center {
+        opacity: 0;
+        margin-left: -25%;
+        margin-top: -25%;
+      }
+      .current .linden .centerRod .topArc ._position_4 .circle._center {
+        transform-origin: center center;
+        animation: leaf-grow 0.4s ease-out forwards 1.7s;
+      }
+
+      /* 倒数第二片叶子 */
+      .current
+        .linden
+        .centerRod
+        .bottomArc
+        .bottomArc__rightBranch
+        ._position_2 {
+        transform-origin: center bottom;
+        animation: leaf-grow 0.7s ease-out forwards 1.2s;
+      }
+      .current
+        .linden
+        .centerRod
+        .bottomArc
+        .bottomArc__rightBranch
+        ._position_2
+        .circle._center {
+        margin-top: -12%;
+        margin-left: -17%;
+        transform-origin: center center;
+        animation: leaf-grow 0.4s ease-out forwards 1.9s;
+      }
+      .current .linden .centerRod ._position_5 {
+        /* opacity: 0; */
+        transform-origin: center center;
+        animation: leaf-grow 0.7s ease-out forwards 1.8s;
+      }
+      .current .linden .centerRod ._position_5 .circle {
+        margin-left: -21%;
+        transform-origin: center bottom;
+        animation: leaf-grow 0.3s ease-out forwards 2s;
+      }
+
+      .current .sepal .cup .kernel {
+        opacity: 0;
+        animation: leaf-grow 0.8s ease-out forwards;
+        margin-left: -18%;
+        margin-top: -18%;
+      }
+      /* 最底下的叶子 */
+      .current .sepal .rod .cup._l4 .kernel {
+        animation-duration: 0.6s;
+        animation-delay: 1.2s;
+      }
+      .current .sepal .rod .cup._l3 .kernel {
+        animation-duration: 0.7s;
+        animation-delay: 1.3s;
+      }
+      .current .sepal .rod .cup._l2 .kernel {
+        animation-duration: 0.75s;
+        animation-delay: 1.4s;
+      }
+      .current .sepal .rod .cup._l1 .kernel {
+        animation-duration: 0.8s;
+        animation-delay: 1.5s;
+      }
+
+      .sepal .arc .arc__circle {
+        opacity: 0;
+        transform-origin: right bottom;
+      }
+
+      .current .sepal .arc .arc__circle {
+        animation: leaf-grow 0.5s ease-out forwards 1.7s;
+      }
+
+      .current .sepal .cup._l4 {
+        transform-origin: center 100%;
+        animation: leaf-grow 0.5s ease-out forwards 0.15s;
+      }
+      .current .sepal .cup._r3 {
+        transform-origin: center 100%;
+        animation: leaf-grow 0.5s ease-out forwards 0.2s;
+      }
+      .current .sepal .cup._l3 {
+        transform-origin: 100% center;
+        animation: leaf-grow 0.5s ease-out forwards 0.4s;
+      }
+      .current .sepal .cup._r2 {
+        transform-origin: 0 center;
+        animation: leaf-grow 0.5s ease-out forwards 0.5s;
+      }
+      .current .sepal .cup._l2 {
+        transform-origin: 100% center;
+        animation: leaf-grow 0.5s ease-out forwards 0.6s;
+      }
+      .current .sepal .cup._r1 {
+        transform-origin: 0 center;
+        animation: leaf-grow 0.5s ease-out forwards 0.7s;
+      }
+      .current .sepal .cup._l1 {
+        transform-origin: 100% center;
+        animation: leaf-grow 0.5s ease-out forwards 0.6s;
+      }
+
+      .current .seedling .leaf_1 {
+        animation: leaf-grow 0.5s ease-out forwards 0.8s;
+      }
+      .current .seedling .leaf_2 {
+        animation: leaf-grow 0.5s ease-out forwards 1s;
+      }
+      .current .seedling .leaf_3 {
+        animation: leaf-grow 0.5s ease-out forwards 1.2s;
+      }
+      .current .seedling .leaf_4 {
+        animation: leaf-grow 0.5s ease-out forwards 1.4s;
+      }
+      .current .seedling .leaf_5 {
+        animation: leaf-grow 0.5s ease-out forwards 1.5s;
+      }
+      .current .seedling .leaf_6 {
+        animation: leaf-grow 0.5s ease-out forwards 1.7s;
+      }
+      .current .seedling .leaf_7 {
+        animation: leaf-grow 0.5s ease-out forwards 1.9s;
+      }
+      .current .seedling .leaf_8 {
+        animation: leaf-grow 0.5s ease-out forwards 2.1s;
+      }
+      .current .seedling .leaf_9 {
+        animation: leaf-grow 0.5s ease-out forwards 2.2s;
+      }
+      .current .seedling .leaf_10 {
+        animation: leaf-grow 0.5s ease-out forwards 2.4s;
+      }
+      .current .seedling .arc {
+        animation: legs-grow 0.3s ease-out forwards 1.7s;
+      }
+
+      .current .sepal .arc {
+        animation: legs-grow 0.3s ease-out forwards 0.8s;
+      }
+      @keyframes fade-in {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes arc-grow {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes seed-grow {
+        from {
+          transform: scale(0);
+        }
+        to {
+          tranform: scale(1);
+        }
+      }
+      @keyframes stem-grow {
+        from {
+          transform: scaleY(0);
+          width: 1px;
+        }
+        to {
+          transform: scaleY(1);
+          width: 4px;
+        }
+      }
+      @keyframes legs-grow {
+        from {
+          border-width: 0px;
+        }
+        to {
+          border-width: 4px;
+        }
+      }
+      @keyframes width-grow {
+        to {
+          width: 4px;
+        }
+      }
+      @keyframes leaf-grow {
+        0% {
+          opacity: 0;
+          transform: scale(0);
+        }
+        10% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @media screen and (orientation: landscape) and (max-height: 846px) {
+        .seedling {
+          transform: translate(-65%, -50%) scale(0.8);
+        }
+      }
+      @media screen and (orientation: landscape) and (max-height: 682px) {
+        .seedling {
+          transform: translate(-65%, -50%) scale(0.6);
+        }
+      }
+      @media screen and (orientation: landscape) and (max-height: 520px) {
+        .seedling {
+          transform: translate(-65%, -50%) scale(0.4);
+        }
+      }
+      @media screen and (orientation: landscape) and (max-height: 356px) {
+        .seedling {
+          transform: translate(-65%, -50%) scale(0.2);
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .seedling {
+          transform: translate(-65%, -50%) scale(0.8);
+        }
+      }
+      @media screen and (max-width: 375px) {
+        .seedling {
+          transform: translate(-65%, -50%) scale(0.6);
+        }
+      }
+      @media screen and (max-width: 320px) {
+        .seedling {
+          transform: translate(-65%, -50%) scale(0.5);
+        }
+      }
+
+      /*____________________________________________________________ ## Sepal ____________________________________________________________*/
+      .sepal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-85%, -50%);
+        width: 207px;
+        height: 818px;
+      }
+      .sepal .rod {
+        position: relative;
+        margin: 0 auto;
+        width: 0px;
+        height: 100%;
+        background-color: #000;
+      }
+      .sepal .rod .arc {
+        position: absolute;
+        top: -160px;
+        left: -170px;
+        width: 340px;
+        height: 340px;
+        border: 4px solid #000;
+        border-radius: 50%;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        transform: rotate(45deg);
+      }
+      .sepal .rod .arc .arc__circle {
+        position: absolute;
+        top: 24px;
+        right: 35px;
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+        background-color: #de162a;
+      }
+      .sepal .rod .brunch {
+        position: absolute;
+        left: -54px;
+        bottom: 182px;
+        width: 108px;
+        height: 114px;
+        border: 4px solid #000;
+        border-top-color: transparent;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+      }
+      .sepal .rod .cup {
+        position: absolute;
+        border-radius: 50%;
+        width: 105px;
+        height: 105px;
+        background-color: #000;
+        z-index: 1;
+      }
+      .sepal .rod .cup._center {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .sepal .rod .cup._left {
+        right: 1px;
+      }
+      .sepal .rod .cup._l1 {
+        bottom: 586px;
+      }
+      .sepal .rod .cup._l2 {
+        bottom: 469px;
+      }
+      .sepal .rod .cup._l3 {
+        bottom: 352px;
+      }
+      .sepal .rod .cup._l4 {
+        bottom: 235px;
+      }
+      .sepal .rod .cup._r1 {
+        bottom: 526px;
+      }
+      .sepal .rod .cup._r2 {
+        bottom: 409px;
+      }
+      .sepal .rod .cup._r3 {
+        bottom: 292px;
+      }
+      .sepal .rod .cup .kernel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+        background-color: #de162a;
+      }
+      @media screen and (orientation: landscape) and (max-height: 846px) {
+        .sepal {
+          transform: translate(-85%, -50%) scale(0.8);
+        }
+      }
+      @media screen and (orientation: landscape) and (max-height: 682px) {
+        .sepal {
+          transform: translate(-85%, -50%) scale(0.6);
+        }
+      }
+      @media screen and (orientation: landscape) and (max-height: 520px) {
+        .sepal {
+          transform: translate(-85%, -50%) scale(0.4);
+        }
+      }
+      @media screen and (orientation: landscape) and (max-height: 356px) {
+        .sepal {
+          transform: translate(-85%, -50%) scale(0.2);
+        }
+      }
+      @media screen and (max-width: 414px) {
+        .sepal {
+          transform: translate(-85%, -50%) scale(0.8);
+        }
+      }
+      @media screen and (max-width: 375px) {
+        .sepal {
+          transform: translate(-85%, -50%) scale(0.6);
+        }
+      }
+      @media screen and (max-width: 320px) {
+        .sepal {
+          transform: translate(-85%, -50%) scale(0.5);
+        }
+      }
+
+      .sepal .cup {
+        opacity: 0;
+      }
+      .sepal .rod .brunch {
+        border-width: 0;
+      }
+      .sepal .rod .arc {
+        border-width: 0;
+      }
+
+      /* ---------------------end of tree------------------------ */
+
+      .alue {
+        text-align: center;
+      }
+
+      #two {
+        background: #1d7599;
+      }
+
+      #three {
+        background: #175e7a;
+      }
+
+      #four {
+        background: #114559;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrap">
+      <div class="page">
+        <div class="seedling">
+          <div class="rod">
+            <div class="stem"></div>
+            <div class="circle _xl _bg_black _xl_margin leaf leaf_4"></div>
+            <div class="circle _lg_rod _bg_black leaf leaf_5"></div>
+            <div class="circle _md_rod _bg_black leaf leaf_6"></div>
+            <div class="circle _sm_rod _bg_black leaf leaf_7"></div>
+            <div class="circle _xs_rod _bg_red leaf leaf_8"></div>
+            <div class="circle _xl_arc _bg_black leaf leaf_5"></div>
+            <div class="circle _lg_arc _bg_black leaf leaf_6"></div>
+            <div class="circle _xm_arc _bg_black leaf leaf_7"></div>
+            <div class="circle _md_arc _bg_black leaf leaf_8"></div>
+            <div class="circle _sm_arc _bg_black leaf leaf_9"></div>
+            <div class="circle _xs_arc _bg_black leaf leaf_10"></div>
+            <div class="basis _left _bs_dash _left_1 _bs_undefined"></div>
+            <div class="basis _right _bs_dot _right_1"></div>
+            <div class="basis _left _bs_dash _left_2 _bs_undefined"></div>
+            <div class="basis _right _bs_dot _right_2"></div>
+            <div class="basis _left _bs_dash _left_3 _bs_undefined"></div>
+            <div class="basis _right _bs_dot _right_3"></div>
+            <div class="basis _left _bs_dash _left_4 _bs_undefined"></div>
+            <div class="basis _right _bs_dot _right_4"></div>
+            <div class="basis _left _bs_dash _left_5 _bs_undefined"></div>
+            <div class="basis _right _bs_dot _right_5"></div>
+            <div class="basis _left _bs_dash _left_6 _bs_solid"></div>
+            <div class="basis _right _bs_dot _right_6"></div>
+            <div class="basis _left _bs_dash _left_7 _bs_solid"></div>
+            <div class="basis _right _bs_dot _right_7"></div>
+            <div class="basis _left _bs_dash _left_8 _bs_solid"></div>
+            <div class="basis _right _bs_dot _right_8"></div>
+            <div
+              class="circle _bCircle _bg_red _b_circle_margin_1 leaf leaf_3"
+            ></div>
+            <div
+              class="circle _bCircle _bg_black _b_circle_margin_2 leaf leaf_2"
+            ></div>
+            <div
+              class="circle _bCircle _bg_black _b_circle_margin_3 leaf leaf_1"
+            ></div>
+            <div class="legs"></div>
+          </div>
+          <div class="arc"></div>
+        </div>
+        <div class="text text_seedling">
+          <p>有一粒种子</p>
+          <p>它不从什么树上落下</p>
+          <p>不从什么花中结出</p>
+        </div>
+        <div class="arrow"></div>
+      </div>
+
+      <div class="page">
+        <div class="sepal">
+          <div class="rod">
+            <div class="stem"></div>
+            <div class="arc">
+              <div class="arc__circle"></div>
+            </div>
+            <div class="cup _center"></div>
+            <div class="cup _left _l1">
+              <div class="kernel"></div>
+            </div>
+            <div class="cup _left _l2">
+              <div class="kernel"></div>
+            </div>
+            <div class="cup _left _l3">
+              <div class="kernel"></div>
+            </div>
+            <div class="cup _left _l4">
+              <div class="kernel"></div>
+            </div>
+            <div class="cup _r1"></div>
+            <div class="cup _r2"></div>
+            <div class="cup _r3"></div>
+            <div class="brunch"></div>
+          </div>
+        </div>
+        <div class="text text_sepal">
+          <p>沉默的果实</p>
+          <p style="margin-top: 1.5em">在枝桠里留下</p>
+          <p style="margin-top: 3em">秘密的脉搏♥️</p>
+        </div>
+        <div class="arrow"></div>
+      </div>
+      <div class="page">
+        <div class="linden">
+          <div class="leftRod">
+            <div class="stem"></div>
+            <div class="leftRod__leftBruch">
+              <div class="circle _bg_black _cmlb"></div>
+            </div>
+          </div>
+          <div class="centerRod">
+            <div class="stem"></div>
+            <div class="bottomArc">
+              <div class="bottomArc__rightBranch">
+                <div class="stem"></div>
+                <div class="crown _md_horizontal _bg_black _position_2">
+                  <div class="circle _bg_red _center"></div>
+                </div>
+              </div>
+              <div class="crown _sm _bg_red _position_1"></div>
+            </div>
+            <div class="topArc">
+              <div class="stem_horizontal"></div>
+              <div class="topArc__leftBranch"></div>
+              <div class="crown _sm _bg_black _position_3"></div>
+              <div class="crown _md _bg_black _position_4">
+                <div class="circle _bg_red _center"></div>
+              </div>
+            </div>
+            <div class="crown _lg _bg_red _position_5">
+              <div class="circle _bg_black _center"></div>
+            </div>
+          </div>
+          <div class="rightRod">
+            <div class="stem"></div>
+            <div class="rightRod__rightBruch">
+              <div class="circle _bg_red _cmrb"></div>
+            </div>
+          </div>
+        </div>
+        <div class="text text_linden">
+          <p>攀升</p>
+          <p>向天空</p>
+          <p>向内心深处</p>
+        </div>
+      </div>
+      <div class="page">
+        <div class="pine">
+          <div class="leftRod">
+            <div class="leftRod__rightBrunch">
+              <div class="crown _lg _bg_red _position_1">
+                <div class="kernel _bg_black"></div>
+                <div class="basisBrunch"></div>
+              </div>
+            </div>
+          </div>
+          <div class="centerRod">
+            <div class="centerRod__bottomLeftBrunch">
+              <div class="crown _md _bg_red _position_3">
+                <div class="kernel _bg_black"></div>
+                <div class="basisBrunch"></div>
+              </div>
+            </div>
+            <div class="centerRod__bottomRightBrunch">
+              <div class="crown _md _bg_black _position_4">
+                <div class="kernel _bg_red"></div>
+              </div>
+            </div>
+            <div class="centerRod__topLeftBrunch">
+              <div class="crown _sm _bg_black _position_5">
+                <div class="kernel _bg_red"></div>
+                <div class="centerBrunch">
+                  <div class="centerBrunch__leftBrunch _bg_black">
+                    <div class="circle _bg_red"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="centerRod__topRightBrunch">
+              <div class="crown _sm _bg_red _position_6">
+                <div class="kernel _bg_black"></div>
+                <div class="centerBrunch"></div>
+                <div class="basisBrunch"></div>
+              </div>
+            </div>
+            <div class="crown _xs _bg_black _position_7">
+              <div class="kernel _bg_red"></div>
+              <div class="basisBrunch"></div>
+            </div>
+          </div>
+          <div class="rightRod">
+            <div class="rightRod__leftBrunch">
+              <div class="crown _lg _bg_black _position_2">
+                <div class="kernel _bg_red"></div>
+                <div class="crown__leftBrunch _bg_black">
+                  <div class="circle _bg_black"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text text_pine">
+          <p>重复</p>
+          <p>是时间的回声</p>
+          <p>不断在当下重生</p>
+        </div>
+      </div>
+      <div class="page" id="canvasWrp">
+        <canvas></canvas>
+      </div>
+    </div>
+
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/PageSlider.js"></script>
+    <script>
+      var p = new PageSlider({
+        pages: $(".page-wrap .page"),
+        dev: 4,
+      });
+
+      const MAX_AGE = 80;
+      const LEAF_DISTANCE = 6;
+      const DIAMETER = 10;
+      const LEAFE_SIZE = 3;
+      const TREE_VARIANCE = 2;
+      const BRANCH_VARIANCE = 30;
+      const DRAW_DISTANCE = 3;
+
+      const canvas = document.querySelector("canvas");
+      const ctx = canvas.getContext("2d", { alpha: false });
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      /* ~~~~~ */
+
+      class PerlinNoise {
+        static grad3 = [
+          [1, 1, 0],
+          [-1, 1, 0],
+          [1, -1, 0],
+          [-1, -1, 0],
+          [1, 0, 1],
+          [-1, 0, 1],
+          [1, 0, -1],
+          [-1, 0, -1],
+          [0, 1, 1],
+          [0, -1, 1],
+          [0, 1, -1],
+          [0, -1, -1],
+        ];
+
+        constructor() {
+          this.p = [];
+          for (let i = 0; i < 256; i++) {
+            this.p[i] = ~~(Math.random() * 256);
+          }
+
+          this.perm = [];
+          for (let i = 0; i < 512; i++) {
+            this.perm[i] = this.p[i & 255];
+          }
+        }
+
+        static dot(g, x, y, z) {
+          return g[0] * x + g[1] * y + g[2] * z;
+        }
+
+        static mix(a, b, t) {
+          return (1.0 - t) * a + t * b;
+        }
+
+        static fade(t) {
+          return t * t * t * (t * (t * 6.0 - 15.0) + 10.0);
+        }
+
+        at(x = 0, y = 0, z = 0) {
+          let X = ~~x;
+          let Y = ~~y;
+          let Z = ~~z;
+
+          x = x - X;
+          y = y - Y;
+          z = z - Z;
+
+          X = X & 255;
+          Y = Y & 255;
+          Z = Z & 255;
+
+          const gi000 = this.perm[X + this.perm[Y + this.perm[Z]]] % 12;
+          const gi001 = this.perm[X + this.perm[Y + this.perm[Z + 1]]] % 12;
+          const gi010 = this.perm[X + this.perm[Y + 1 + this.perm[Z]]] % 12;
+          const gi011 = this.perm[X + this.perm[Y + 1 + this.perm[Z + 1]]] % 12;
+          const gi100 = this.perm[X + 1 + this.perm[Y + this.perm[Z]]] % 12;
+          const gi101 = this.perm[X + 1 + this.perm[Y + this.perm[Z + 1]]] % 12;
+          const gi110 = this.perm[X + 1 + this.perm[Y + 1 + this.perm[Z]]] % 12;
+          const gi111 =
+            this.perm[X + 1 + this.perm[Y + 1 + this.perm[Z + 1]]] % 12;
+
+          const n000 = PerlinNoise.dot(PerlinNoise.grad3[gi000], x, y, z);
+          const n100 = PerlinNoise.dot(PerlinNoise.grad3[gi100], x - 1, y, z);
+          const n010 = PerlinNoise.dot(PerlinNoise.grad3[gi010], x, y - 1, z);
+          const n110 = PerlinNoise.dot(
+            PerlinNoise.grad3[gi110],
+            x - 1,
+            y - 1,
+            z
+          );
+          const n001 = PerlinNoise.dot(PerlinNoise.grad3[gi001], x, y, z - 1);
+          const n101 = PerlinNoise.dot(
+            PerlinNoise.grad3[gi101],
+            x - 1,
+            y,
+            z - 1
+          );
+          const n011 = PerlinNoise.dot(
+            PerlinNoise.grad3[gi011],
+            x,
+            y - 1,
+            z - 1
+          );
+          const n111 = PerlinNoise.dot(
+            PerlinNoise.grad3[gi111],
+            x - 1,
+            y - 1,
+            z - 1
+          );
+
+          const u = PerlinNoise.fade(x);
+          const v = PerlinNoise.fade(y);
+          const w = PerlinNoise.fade(z);
+
+          const nx00 = PerlinNoise.mix(n000, n100, u);
+          const nx01 = PerlinNoise.mix(n001, n101, u);
+          const nx10 = PerlinNoise.mix(n010, n110, u);
+          const nx11 = PerlinNoise.mix(n011, n111, u);
+          const nxy0 = PerlinNoise.mix(nx00, nx10, v);
+          const nxy1 = PerlinNoise.mix(nx01, nx11, v);
+          const nxyz = PerlinNoise.mix(nxy0, nxy1, w);
+
+          return nxyz;
+        }
+      }
+
+      /* ~~~~~ */
+
+      const radians = (degrees) => (degrees * Math.PI) / 180;
+      const noise = new PerlinNoise();
+      const trees = [];
+
+      class Point {
+        constructor(x, y, colour, age = 0, degrees = 0, variance = 0) {
+          this.x = x;
+          this.y = y;
+          this.opacity = (MAX_AGE - age) / MAX_AGE;
+          this.colour = colour;
+          this.radius = DIAMETER;
+          this.age = age;
+          this.degrees = degrees;
+          this.variance = variance;
+        }
+      }
+
+      const addLeaf = (tree, point) => {
+        const leaf = new Point(
+          point.x + (-LEAF_DISTANCE + Math.random() * (LEAF_DISTANCE * 2)),
+          point.y + (-LEAF_DISTANCE + Math.random() * (LEAF_DISTANCE * 2)),
+          [point.colour[0] + 25, point.colour[1], point.colour[2]]
+        );
+
+        leaf.opacity = 0;
+        leaf.spawned = true;
+        leaf.radius = LEAFE_SIZE + Math.random() * (LEAFE_SIZE * 2);
+
+        tree.leaves.push(leaf);
+      };
+
+      class Tree {
+        constructor(x = 0, y = 0, colour) {
+          this.x = x;
+          this.y = y;
+          this.points = [new Point(x, y, colour, 0, -90, TREE_VARIANCE)];
+          this.leaves = [];
+        }
+      }
+
+      const update = (tree) => {
+        if (tree.done) return;
+
+        let done = true;
+
+        tree.points.forEach((point) => {
+          if (point.spawned || point.age >= MAX_AGE) {
+            return;
+          }
+
+          done = false;
+
+          ++point.age;
+
+          const branch = (variance) => {
+            const reduce = 0.01;
+            const n =
+              (noise.at(
+                (point.x + point.age) * reduce,
+                (point.y + point.age) * reduce
+              ) -
+                0.5) *
+              4 *
+              Math.PI;
+            const mag = noise.at(
+              (point.y + point.age) * reduce,
+              (point.x + point.age) * reduce
+            );
+            const dirX = Math.cos(n) * mag;
+            const dirY = Math.sin(n) * mag;
+
+            const diff = variance * point.opacity;
+            const degrees = point.degrees + (-diff + Math.random() * diff * 2);
+
+            const randX = Math.cos(radians(degrees)) * DRAW_DISTANCE;
+            const randY = Math.sin(radians(degrees)) * DRAW_DISTANCE;
+
+            const x = point.x + dirX + randX;
+            const y = point.y + dirY + randY;
+
+            tree.points.push(
+              new Point(x, y, point.colour, point.age, degrees, variance)
+            );
+          };
+
+          if (
+            point.age > MAX_AGE * 0.2 &&
+            point.age < MAX_AGE * 0.8 &&
+            Math.random() < 0.07 * (1 - point.opacity * 0.4)
+          ) {
+            branch(point.variance + BRANCH_VARIANCE);
+          }
+
+          if (Math.random() < 0.2 && point.age > MAX_AGE * 0.8) {
+            addLeaf(tree, point);
+            addLeaf(tree, point);
+            addLeaf(tree, point);
+          }
+
+          branch(point.variance);
+
+          point.spawned = true;
+        });
+
+        tree.done = done;
+      };
+
+      const addTree = (x, y) => {
+        ctx.fillStyle = "rgba(255, 255, 255, 0.001)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const colour = [Math.random() * 360, 80, 80];
+
+        trees.push(new Tree(x, y, colour));
+      };
+
+      const drawPoint = (point, radius, opacity = 1) => {
+        ctx.beginPath();
+        ctx.arc(
+          point.x,
+          point.y,
+          radius || point.radius * point.opacity,
+          0,
+          Math.PI * 2
+        );
+        ctx.fillStyle = `hsla(${point.colour[0]}, ${point.colour[1]}%, ${
+          point.colour[2] + 20 * point.opacity
+        }%, ${opacity})`;
+        ctx.fill();
+      };
+
+      const draw = (tree) => {
+        let done = true;
+        tree.points.forEach((point) => {
+          if (point.drawn) return;
+
+          done = false;
+          drawPoint(point);
+          point.drawn = true;
+        });
+
+        done &&
+          tree.leaves.forEach((point) => {
+            if (point.drawn) return;
+
+            done = false;
+            drawPoint(point, point.radius, 0.15);
+            point.drawn = true;
+          });
+
+        done && trees.splice(trees.indexOf(tree), 1);
+      };
+
+      const loop = () => {
+        trees.forEach(update);
+        trees.forEach(draw);
+        window.requestAnimationFrame(loop);
+      };
+
+      ctx.fillStyle = "#fff"; //#fff, #f1eee2
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      loop();
+
+      canvas.onmousedown = (e) => {
+        console.log(e.offsetX, e.offsetY, "x,y");
+        addTree(e.offsetX, e.offsetY, 1);
+      };
+
+      // 选择目标元素
+      const canvasWrp = document.querySelector("#canvasWrp");
+
+      // 创建 IntersectionObserver
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              console.log("enter screen");
+              // ctx.clearRect(0, 0, canvas.width, canvas.height);
+              let i = 0;
+              let totalTime = 0;
+              function drawTree() {
+                if (i <= 37) {
+                  addTree(
+                    canvas.width * Math.random(),
+                    canvas.height * Math.random(),
+                    1
+                  );
+                  i++;
+                  const num = Math.floor(Math.random() * (500 - 300 + 1)) + 300;
+                  totalTime += num;
+                  setTimeout(drawTree, num);
+                } else {
+                  setTimeout(() => {
+                    ctx.font = "normal normal 100 30px Helvetica";
+                    ctx.textAlign = "center";
+                    ctx.textSize = 20;
+                    ctx.fillStyle = "hsl(161, 100%, 31%)";
+                    ctx.fillText(
+                      "Happy Birthday!",
+                      canvas.width / 2,
+                      canvas.height / 1.2
+                    );
+                    ctx.fillText(
+                      "DearTree 🤪",
+                      canvas.width / 2,
+                      canvas.height / 1.12
+                    );
+                  }, 300);
+                }
+              }
+              drawTree();
+              observer.unobserve(canvasWrp); // 只触发一次
+            }
+          });
+        },
+        {
+          threshold: 0.3, // 可见 30% 时触发
+        }
+      );
+
+      // 监听
+      observer.observe(canvasWrp);
+    </script>
+  </body>
+</html>
