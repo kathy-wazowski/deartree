@@ -1280,7 +1280,7 @@
       const audio = document.getElementById("bgAudio");
 
       window.addEventListener("load", () => {
-        audio.addEventListener("canplaythrough", () => {
+        audio.addEventListener("loadeddata", () => {
           document.getElementById("loading").style.display = "none";
           document.getElementById("main").style.display = "block";
         });
