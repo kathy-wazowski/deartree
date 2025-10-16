@@ -1280,10 +1280,8 @@
       const audio = document.getElementById("bgAudio");
 
       window.addEventListener("load", () => {
-        audio.addEventListener("loadeddata", () => {
-          document.getElementById("loading").style.display = "none";
-          document.getElementById("main").style.display = "block";
-        });
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("main").style.display = "block";
       });
 
       var p = new PageSlider({
